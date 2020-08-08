@@ -1,0 +1,78 @@
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+// @import "https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.min.css";
+// @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+
+.login {
+  height: 100vh;
+  background: -moz-linear-gradient(
+    -45deg,
+    rgb(201, 240, 247) 0%,
+    rgba(146, 168, 209, 1) 100%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgb(201, 240, 247) 0%,
+    rgba(146, 168, 209, 1) 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    rgb(201, 240, 247) 0%,
+    rgba(146, 168, 209, 1) 100%
+  );
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /* IE6-9 fallback on horizontal gradient */
+}
+
+.appName {
+  width: 23%;
+  height: 20%;
+  font-size: 4em;
+  line-height: 1;
+  border-bottom: 1px dotted #fff;
+  text-shadow: 1px 1px #282c34;
+}
+
+.selectBtn {
+  margin-top: 3em;
+  width: 30%;
+  height: 5%;
+  border-bottom: 0px;
+  font-size: 0.8em;
+  box-shadow: 0px 1em 2em -1.5em rgba(0, 0, 0, 0.5);
+  text-align: left;
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  background-position: right;
+  background-origin: content-box;
+}
+
+.arrowDown {
+  background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16'  fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+}
+
+.arrowUp {
+  background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/></svg>");
+}
+
+button:focus {
+  outline: 0;
+}
+
+.selectListContainer {
+  position: fixed;
+  top: 64.4%;
+  width: 30%;
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  color: rgba(146, 168, 209, 1);
+}
