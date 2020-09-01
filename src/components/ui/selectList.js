@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
+import { useDispatch } from "react-redux";
+import { setLoggedInUser } from "../../actions/setLoggedInUser";
+import { Link } from "react-router-dom";
 
 const SelectList = (props) => {
   const [selectTitle, setSelectTitle] = useState("Select a user to continue");
@@ -8,6 +11,7 @@ const SelectList = (props) => {
   const hiddenStyle = { opacity: 0, height: 0, overflow: "hidden" };
   const styleProps = useSpring(showList ? visibleStyle : hiddenStyle);
   const { users } = props;
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -22,14 +26,15 @@ const SelectList = (props) => {
         style={styleProps}
       >
         {users.map((user, index) => (
-          <li
+          <Link
             key={index}
             className="list-group-item"
             onClick={() => {
               setSelectTitle(user.name);
               setShowList(!showList);
-              // TODO: rout to homepage with user id
+              dispatch(setLoggedInUser(user.id));
             }}
+            to="/homepage"
           >
             <img
               src={user.avatarURL}
@@ -39,7 +44,7 @@ const SelectList = (props) => {
               className="mr-3"
             />
             {user.name}
-          </li>
+          </Link>
         ))}
       </animated.ul>
     </>
