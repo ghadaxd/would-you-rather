@@ -1,15 +1,19 @@
 import React from "react";
 import "./style/_custom.scss";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 
-import Login from "./components/pages/login";
+import PrivateRoute from "./components/ui/privateRoute";
 import Homepage from "./components/pages/homepage";
+
+// Applied redirect auth approach from react router docs at: https://reactrouter.com/web/example/auth-workflow
 
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={Login} />
-      <Route exact path="/homepage/" component={Homepage} />
+      <Switch>
+        <PrivateRoute exact path="/homepage" component={Homepage} />
+        <PrivateRoute />
+      </Switch>
     </Router>
   );
 }

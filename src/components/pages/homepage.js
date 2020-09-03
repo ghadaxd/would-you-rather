@@ -1,24 +1,13 @@
 import React from "react";
-import { connect } from "react-redux";
+import Navbar from "../ui/navbar";
 
 class Homepage extends React.Component {
-  state = {
-    userid: null,
-  };
-
-  componentDidMount() {
-    const { id } = this.props;
-
-    this.setState({
-      userid: id,
-    });
-  }
-
   render() {
     return (
       <div className="fluid-container">
         {/* TODO: Nav bar, that has three links */}
         {/* TODO: User's info component */}
+        <Navbar />
         {/* TODO: Logout button */}
         {/* TODO: Questions container */}
 
@@ -28,10 +17,4 @@ class Homepage extends React.Component {
   }
 }
 
-function mapStateToProps({ loggedInUser }) {
-  return {
-    id: loggedInUser || window.sessionStorage.getItem("userid"),
-  };
-}
-
-export default connect(mapStateToProps)(Homepage);
+export default Homepage;

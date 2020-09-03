@@ -1,11 +1,12 @@
 import React from "react";
-import SelectList from "../ui/selectList";
 import { connect } from "react-redux";
+
+import SelectList from "../ui/selectList";
 import { initUsers } from "../../actions/initUsers";
 
 class Login extends React.Component {
   componentDidMount() {
-    this.props.dispatch(initUsers());
+    this.props.users.length === 0 && this.props.dispatch(initUsers());
   }
 
   render() {

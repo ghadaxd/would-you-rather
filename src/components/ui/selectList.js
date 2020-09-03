@@ -32,7 +32,7 @@ const SelectList = (props) => {
             onClick={() => {
               setSelectTitle(user.name);
               setShowList(!showList);
-              dispatch(setLoggedInUser(user.id));
+              dispatch(setLoggedInUser(user));
             }}
             to="/homepage"
           >

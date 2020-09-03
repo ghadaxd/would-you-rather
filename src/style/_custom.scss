@@ -1,29 +1,17 @@
 @import "./node_modules/bootstrap/scss/bootstrap";
 
-// @import "https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.min.css";
-// @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+// Global vars
+$background-color: linear-gradient(
+  135deg,
+  rgb(201, 240, 247) 0%,
+  rgba(146, 168, 209, 1) 100%
+);
+
+// Login page
 
 .login {
   height: 100vh;
-  background: -moz-linear-gradient(
-    -45deg,
-    rgb(201, 240, 247) 0%,
-    rgba(146, 168, 209, 1) 100%
-  );
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    -45deg,
-    rgb(201, 240, 247) 0%,
-    rgba(146, 168, 209, 1) 100%
-  );
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    135deg,
-    rgb(201, 240, 247) 0%,
-    rgba(146, 168, 209, 1) 100%
-  );
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  /* IE6-9 fallback on horizontal gradient */
+  background: $background-color;
 }
 
 .appName {
@@ -34,6 +22,8 @@
   border-bottom: 1px dotted #fff;
   text-shadow: 1px 1px #282c34;
 }
+
+// - select element
 
 .selectBtn {
   margin-top: 3em;
@@ -71,8 +61,20 @@ button:focus {
 
 .list-group-item {
   cursor: pointer;
+  color: #282c34;
 }
 
 .list-group-item:hover {
   color: rgba(146, 168, 209, 1);
+}
+
+// - Navabr
+
+nav {
+  background: $background-color;
+}
+
+.nav-link.active {
+  border-bottom: 1px solid #000;
+  font-weight: 500;
 }
