@@ -1,13 +1,10 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 import CurrentUser from "../ui/currentUser";
-import { logout } from "../../actions/logout";
+import LogoutBtn from "./logoutBtn";
 
-const Navbar = (props) => {
-  const dispatch = useDispatch();
-
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light pl-5">
       <button
@@ -48,20 +45,7 @@ const Navbar = (props) => {
           </li>
         </ul>
         <CurrentUser />
-        <Link
-          onClick={() => {
-            dispatch(logout());
-          }}
-          to="/"
-        >
-          <img
-            src="/assets/logout.svg"
-            alt="Logout icon"
-            width="26"
-            height="26"
-            className="mr-3"
-          />
-        </Link>
+        <LogoutBtn />
       </div>
     </nav>
   );
