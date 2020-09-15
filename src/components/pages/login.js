@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import SelectList from "../ui/selectList";
+import AppName from "../ui/appName";
 import { initUsers } from "../../actions/initUsers";
 
 class Login extends React.Component {
@@ -12,12 +13,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className="login d-flex justify-content-center align-items-center flex-column">
-        <div className="appName text-white">
-          <div className="text-left">Would</div>
-          <div className="text-center">You</div>
-          <div className="text-right">Rather?</div>
-        </div>
-
+        <AppName />
         <SelectList users={this.props.users} />
       </div>
     );

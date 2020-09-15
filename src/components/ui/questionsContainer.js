@@ -5,8 +5,10 @@ import QuestionsTabs from "./questionsTabs";
 import { getQuestions } from "../../actions/getQuestions";
 
 class QuestionsContainer extends React.Component {
-  componentDidMount() {
-    this.props.questions.length === 0 && this.props.dispatch(getQuestions());
+  constructor(props) {
+    super(props);
+
+    props.questions.length === 0 && props.dispatch(getQuestions());
   }
 
   render() {

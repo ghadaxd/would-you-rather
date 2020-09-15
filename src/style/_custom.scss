@@ -15,8 +15,7 @@ $background-color: linear-gradient(
 }
 
 .appName {
-  width: 23%;
-  height: 20%;
+  width: 20rem;
   font-size: 4em;
   line-height: 1;
   border-bottom: 1px dotted #fff;
@@ -81,5 +80,12 @@ nav {
 
 .nav-link {
   text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+//Question
+
+.questionContainer {
+  background: $background-color;
   color: rgba(0, 0, 0, 0.5);
 }

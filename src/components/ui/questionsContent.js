@@ -1,6 +1,57 @@
 import React from "react";
+import Question from "../ui/question";
 
 class QuestionsContent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      questions: this.getUserQuestions(),
+
+      //   questions: [
+      //     {
+      //       id: "vthrdm985a262al8qx3do",
+      //       author: "tylermcginnis",
+      //       timestamp: 1489579767190,
+      //       optionOne: { votes: Array(1), text: "find $50 yourself" },
+      //       optionTwo: {
+      //         votes: Array(1),
+      //         text: "have your best friend find $500",
+      //       },
+      //     },
+      //     {
+      //       id: "vthrdm985a262al8qx3do",
+      //       author: "tylermcginnis",
+      //       timestamp: 1489579767190,
+      //       optionOne: { votes: Array(1), text: "find $50 yourself" },
+      //       optionTwo: {
+      //         votes: Array(1),
+      //         text: "have your best friend find $500",
+      //       },
+      //     },
+      //     {
+      //       id: "vthrdm985a262al8qx3do",
+      //       author: "tylermcginnis",
+      //       timestamp: 1489579767190,
+      //       optionOne: { votes: Array(1), text: "find $50 yourself" },
+      //       optionTwo: {
+      //         votes: Array(1),
+      //         text: "have your best friend find $500",
+      //       },
+      //     },
+      //     {
+      //       id: "vthrdm985a262al8qx3do",
+      //       author: "tylermcginnis",
+      //       timestamp: 1489579767190,
+      //       optionOne: { votes: Array(1), text: "find $50 yourself" },
+      //       optionTwo: {
+      //         votes: Array(1),
+      //         text: "have your best friend find $500",
+      //       },
+      //     },
+      //   ],
+    };
+  }
+
   getUserQuestions = () => {
     if (this.props.user !== null) {
       const { user, questions, type } = this.props;
@@ -30,11 +81,11 @@ class QuestionsContent extends React.Component {
         role="tabpanel"
         aria-labelledby={`${this.props.type}-tab`}
       >
-        {/* render questions cards */}
-        {/* Hii {console.log(this.getUserQuestions())} */}
-        {this.getUserQuestions().map((question, index) => (
-          <li key={index}>{question.id}</li>
-        ))}
+        <div className="d-flex flex-wrap justify-content-center">
+          {this.state.questions.map((question, index) => (
+            <Question key={index} question={question} />
+          ))}
+        </div>
       </div>
     );
   }
