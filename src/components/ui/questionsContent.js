@@ -68,10 +68,27 @@ class QuestionsContent extends React.Component {
         });
       });
 
+      unansweredQuestions.sort(this.compare);
+
+      answeredQuestions.sort(this.compare);
+
       return type === "unanswered" ? unansweredQuestions : answeredQuestions;
     }
     return [];
   };
+
+  compare(a, b) {
+    const questionA = new Date(a.timestamp * 1000);
+    const questionB = new Date(b.timestamp * 1000);
+
+    let comparison = 0;
+    if (questionA < questionB) {
+      comparison = 1;
+    } else if (questionA > questionB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
 
   render() {
     return (
