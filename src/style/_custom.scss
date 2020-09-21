@@ -86,6 +86,22 @@ nav {
 //Question
 
 .questionContainer {
-  background: $background-color;
   color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+
+.userContainer {
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
+}
+
+.pollLink {
+  color: rgba(146, 168, 209, 1);
+}
+
+.userAvatar {
+  background: $background-color;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
 }
