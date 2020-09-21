@@ -39,8 +39,11 @@ class Question extends React.Component {
         questions: ["6ni6ok3ym7mf1p33lnez", "xj352vofupe1dqz9emx13r"],
       },
     ];
-    return users.find((user) => user.id === authorId);
-    // return this.props.users.find((user) => user.id === authorId);
+
+    return (
+      this.props.users.find((user) => user.id === authorId) ||
+      users.find((user) => user.id === authorId)
+    );
   };
 
   render() {
