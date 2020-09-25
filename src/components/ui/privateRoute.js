@@ -1,9 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import Login from "../pages/login";
+import PageNotFound from "../pages/pageNotFound";
 
 // Applied redirect auth approach from react router docs at: https://reactrouter.com/web/example/auth-workflow
 
@@ -19,8 +20,10 @@ const PrivateRoute = ({ ...rest }) => {
       path !== undefined ? (
         <Route {...rest} />
       ) : (
-        <Redirect to="/pageNotFound" />
+        <Route {...rest} component={PageNotFound} />
       )
+    ) : path === undefined ? (
+      <Route {...rest} component={PageNotFound} />
     ) : (
       <Route {...rest} component={Login} />
     );

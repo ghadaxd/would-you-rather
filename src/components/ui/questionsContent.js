@@ -1,6 +1,6 @@
 import React from "react";
 
-import Question from "../ui/question";
+import QuestionPreview from "./questionPreview";
 
 class QuestionsContent extends React.Component {
   constructor() {
@@ -29,7 +29,11 @@ class QuestionsContent extends React.Component {
         <div className="d-flex flex-wrap justify-content-center">
           {this.state.questions.length !== 0 ? (
             this.state.questions.map((question, index) => (
-              <Question key={index} question={question} />
+              <QuestionPreview
+                viewFrom="questionsContent"
+                key={index}
+                question={question}
+              />
             ))
           ) : (
             <span>Loading...</span>

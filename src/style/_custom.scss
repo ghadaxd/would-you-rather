@@ -1,14 +1,15 @@
 @import "./node_modules/bootstrap/scss/bootstrap";
 
 // Global vars
-$background-color: linear-gradient(
-  135deg,
-  rgb(201, 240, 247) 0%,
-  rgba(146, 168, 209, 1) 100%
-);
+$background-color: rgba(146, 168, 209, 1);
+$border-radius: 0.5em;
 
+// linear-gradient(
+//   135deg,
+//   rgb(201, 240, 247) 0%,
+//   rgba(146, 168, 209, 1) 100%
+// );
 // Login page
-
 .login {
   height: 100vh;
   background: $background-color;
@@ -28,14 +29,17 @@ $background-color: linear-gradient(
   margin-top: 3em;
   width: 30%;
   height: 5%;
-  border-bottom: 0px;
+  // border-bottom: 0px;
   font-size: 0.8em;
   box-shadow: 0px 1em 2em -1.5em rgba(0, 0, 0, 0.5);
-  text-align: left;
+  // text-align: left;
   background-repeat: no-repeat;
   background-size: 1rem 1rem;
   background-position: right;
   background-origin: content-box;
+  border-style: none;
+  background-color: #fff;
+  margin-bottom: -0.1em;
 }
 
 .arrowDown {
@@ -56,6 +60,7 @@ button:focus {
   width: 30%;
   font-size: 0.8em;
   text-align: left;
+  border-radius: 0;
 }
 
 .list-group-item {
@@ -88,8 +93,8 @@ nav {
 .questionContainer {
   color: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.5);
-  border-top-right-radius: 0.5em;
-  border-top-left-radius: 0.5em;
+  border-top-right-radius: $border-radius;
+  border-top-left-radius: $border-radius;
 }
 
 .userContainer {
@@ -102,6 +107,13 @@ nav {
 
 .userAvatar {
   background: $background-color;
-  border-top-right-radius: 0.5em;
-  border-top-left-radius: 0.5em;
+  border-top-right-radius: $border-radius;
+  border-top-left-radius: $border-radius;
+}
+
+//Question View
+
+.voteBtn {
+  color: $background-color;
+  outline: $background-color auto 1px;
 }
