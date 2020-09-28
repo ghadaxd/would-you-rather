@@ -1,5 +1,6 @@
 import { SET_LOGGED_IN_USER } from "../actions/setLoggedInUser";
 import { UPDATE_USER_ANSWERS } from "../actions/updateUserAnswers";
+import { UPDATE_USER_QUESTIONS } from "../actions/updateUserQuestions";
 
 export default function loggedInUser(state = null, action) {
   switch (action.type) {
@@ -13,6 +14,11 @@ export default function loggedInUser(state = null, action) {
           ...state.answers,
           [qid]: answer,
         },
+      };
+    case UPDATE_USER_QUESTIONS:
+      return {
+        ...state,
+        questions: [...state.questions, action.qid],
       };
     default:
       return state;

@@ -1,5 +1,6 @@
 import { RECEIVE_QUESTIONS } from "../actions/receiveQuestions";
 import { UPDATE_QUESTIONS } from "../actions/updateQuestions";
+import { ADD_QUESTION } from "../actions/addQuestion";
 
 export default function questions(state = [], action) {
   switch (action.type) {
@@ -20,6 +21,8 @@ export default function questions(state = [], action) {
         return question;
       });
       return updated_questions;
+    case ADD_QUESTION:
+      return [...state, action.question];
     default:
       return state;
   }

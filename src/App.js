@@ -6,6 +6,7 @@ import PrivateRoute from "./components/ui/privateRoute";
 import Homepage from "./components/pages/homepage";
 import Questions from "./components/pages/questions";
 import Login from "./components/pages/login";
+import Add from "./components/pages/add";
 
 // Applied redirect auth approach from react router docs at: https://reactrouter.com/web/example/auth-workflow
 
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <PrivateRoute exact path="/homepage" component={Homepage} />
         <PrivateRoute exact path="/questions/:id" component={Questions} />
+        <PrivateRoute exact path="/add" component={Add} />
         <PrivateRoute exact path="/" component={Login} />
         <PrivateRoute />
       </Switch>
