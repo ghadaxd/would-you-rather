@@ -11,7 +11,7 @@ class QuestionView extends React.Component {
     super(props);
     this.state = {
       questionType: props.questionType,
-      question: {},
+      question: props.question,
     };
   }
 
@@ -46,7 +46,7 @@ class QuestionView extends React.Component {
           <h3 className="mt-3">Would you rather ...</h3>
           {this.state.questionType === "unanswered" ? (
             <QuestionPoll
-              question={question}
+              question={this.state.question}
               goBack={goBack}
               vote={this.vote}
             />

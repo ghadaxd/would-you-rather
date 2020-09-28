@@ -32,7 +32,8 @@ class QuestionOption extends React.Component {
         </div>
         <div className="progress mb-4">
           <div
-            className={`progress-bar w-${votesPercentage} bg-blue`}
+            className={`progress-bar bg-blue`}
+            style={{ width: `${votesPercentage}%` }}
             role="progressbar"
             aria-valuenow={votesPercentage}
             aria-valuemin="0"
