@@ -32,7 +32,7 @@ class CurrentUser extends React.Component {
           height="32"
           className="mr-3"
         />
-        {name}
+        <span className="text-white">{name}</span>
       </div>
     );
   }

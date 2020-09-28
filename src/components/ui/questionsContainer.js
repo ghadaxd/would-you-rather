@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { getQuestions } from "../../actions/getQuestions";
+import { logout } from "../../actions/logout";
 
 import QuestionsContent from "./questionsContent";
 import QuestionsTabs from "./questionsTabs";
@@ -26,8 +27,8 @@ class QuestionsContainer extends React.Component {
     }
   }
 
-  componentDidUpdate(oldProps) {
-    if (oldProps.questions.length !== this.props.questions.length) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.questions !== this.props.questions) {
       this.setState({
         unansweredQuestions: this.getUserQuestions("unanswered"),
         answeredQuestions: this.getUserQuestions("answered"),
@@ -56,50 +57,11 @@ class QuestionsContainer extends React.Component {
       answeredQuestions.sort(this.compare);
 
       return type === "unanswered" ? unansweredQuestions : answeredQuestions;
+    } else {
+      this.props.logout();
+      this.props.go("/");
+      return [];
     }
-
-    return [
-      {
-        id: "vthrdm985a262al8qx3do",
-        author: "tylermcginnis",
-        timestamp: 1489579767190,
-        optionOne: { votes: Array(1), text: "find $50 yourself" },
-        optionTwo: {
-          votes: Array(1),
-          text: "have your best friend find $500",
-        },
-      },
-      {
-        id: "vthrdm985a262al8qx3do",
-        author: "tylermcginnis",
-        timestamp: 1489579767190,
-        optionOne: { votes: Array(1), text: "find $50 yourself" },
-        optionTwo: {
-          votes: Array(1),
-          text: "have your best friend find $500",
-        },
-      },
-      {
-        id: "vthrdm985a262al8qx3do",
-        author: "tylermcginnis",
-        timestamp: 1489579767190,
-        optionOne: { votes: Array(1), text: "find $50 yourself" },
-        optionTwo: {
-          votes: Array(1),
-          text: "have your best friend find $500",
-        },
-      },
-      {
-        id: "vthrdm985a262al8qx3do",
-        author: "tylermcginnis",
-        timestamp: 1489579767190,
-        optionOne: { votes: Array(1), text: "find $50 yourself" },
-        optionTwo: {
-          votes: Array(1),
-          text: "have your best friend find $500",
-        },
-      },
-    ];
   };
 
   compare(a, b) {
@@ -157,6 +119,7 @@ function mapStateToProps({ loggedInUser, questions }) {
 const mapDispatchToProps = (dispatch) => {
   return {
     getQuestions: () => dispatch(getQuestions()),
+    logout: () => dispatch(logout()),
   };
 };
 

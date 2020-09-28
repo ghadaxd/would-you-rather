@@ -1,50 +1,75 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
+
 import QuestionHeader from "./questionHeader";
+import QuestionPoll from "./questionPoll";
+import QuestionResult from "./questionResult";
+import { voteForQuestion } from "../../actions/voteForQuestion";
 
 class QuestionView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      questionType: props.questionType,
+      question: {},
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.question !== this.props.question) {
+      this.setState({
+        questionType: "answered",
+        question: this.props.question,
+      });
+    }
+  }
+
+  vote = (answer) => {
+    const { user, question } = this.props;
+
+    const vote = {
+      authedUser: user.id,
+      qid: question.id,
+      answer,
+    };
+
+    this.props.voteForQuestion(vote);
+  };
+
   render() {
-    const { question } = this.props;
+    const { question, goBack } = this.props;
 
     return (
       <div className="col-6 p-2 m-3">
         <QuestionHeader author={question.author} />
-        <div className="d-flex flex-column align-items-center questionContainer p-2 m-3">
+        <div className="questionContainer p-4 m-3">
           <h3 className="mt-3">Would you rather ...</h3>
-          <ul className="mt-3">
-            <li>
-              <input
-                className="form-check-input"
-                type="radio"
-                name="questionOpt"
-                id="questionOpt1"
-                value="opt1"
-              />
-              <label className="form-check-label" htmlFor="questionOpt1">
-                {question.optionOne.text}
-              </label>
-            </li>
-            <li>
-              <input
-                className="form-check-input"
-                type="radio"
-                name="questionOpt"
-                id="questionOpt2"
-                value="opt2"
-              />
-              <label className="form-check-label" htmlFor="questionOpt2">
-                {question.optionTwo.text}
-              </label>
-            </li>
-          </ul>
-          <button type="button" className="btn voteBtn mt-3">
-            Vote
-          </button>
+          {this.state.questionType === "unanswered" ? (
+            <QuestionPoll
+              question={question}
+              goBack={goBack}
+              vote={this.vote}
+            />
+          ) : (
+            <QuestionResult question={this.state.question} goBack={goBack} />
+          )}
         </div>
       </div>
     );
   }
 }
 
-export default QuestionView;
+function mapStateToProps({ loggedInUser, questions }) {
+  return {
+    user: loggedInUser,
+    questions,
+  };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    voteForQuestion: (vote) => dispatch(voteForQuestion(vote)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionView);

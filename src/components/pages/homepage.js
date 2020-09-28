@@ -7,7 +7,7 @@ class Homepage extends React.Component {
     return (
       <div className="fluid-container">
         <Navbar />
-        <QuestionsContainer />
+        <QuestionsContainer go={this.props.history.go} />
       </div>
     );
   }

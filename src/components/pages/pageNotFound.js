@@ -18,8 +18,8 @@ const PageNotFound = (props) => {
           alt="Page not found"
           className="mb-5"
         />
-        <h1>404</h1>
-        <h3>Oops! page not found! : (</h3>
+        <h1 className="bg-blue text-white">404</h1>
+        <h3 className="text-myBlue">Oops! page not found! : (</h3>
         <Link className="p-2 mt-5 voteBtn" to="/homepage">
           Go to <strong>Homepage</strong>
         </Link>

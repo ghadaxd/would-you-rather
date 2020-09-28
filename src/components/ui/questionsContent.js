@@ -10,8 +10,8 @@ class QuestionsContent extends React.Component {
     };
   }
 
-  componentDidUpdate(oldProps) {
-    if (oldProps.questions.length !== this.props.questions.length) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.questions.length !== this.props.questions.length) {
       this.setState({
         questions: this.props.questions,
       });
@@ -33,10 +33,11 @@ class QuestionsContent extends React.Component {
                 viewFrom="questionsContent"
                 key={index}
                 question={question}
+                questionType={this.props.type}
               />
             ))
           ) : (
-            <span>Loading...</span>
+            <span className="text-myGrey">No questions to display = )</span>
           )}
         </div>
       </div>

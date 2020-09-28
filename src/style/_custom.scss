@@ -2,13 +2,20 @@
 
 // Global vars
 $background-color: rgba(146, 168, 209, 1);
+$color: rgba(0, 0, 0, 0.5);
 $border-radius: 0.5em;
 
-// linear-gradient(
-//   135deg,
-//   rgb(201, 240, 247) 0%,
-//   rgba(146, 168, 209, 1) 100%
-// );
+// Shared style
+.bg-blue {
+  background-color: $background-color;
+}
+.text-myBlue {
+  color: $background-color;
+}
+.text-myGrey {
+  color: $color !important;
+}
+
 // Login page
 .login {
   height: 100vh;
@@ -43,11 +50,11 @@ $border-radius: 0.5em;
 }
 
 .arrowDown {
-  background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16'  fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+  background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' style='color: rgba(0, 0, 0, 0.5)' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 }
 
 .arrowUp {
-  background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/></svg>");
+  background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' style='color: rgba(0, 0, 0, 0.5)' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/></svg>");
 }
 
 button:focus {
@@ -79,13 +86,17 @@ nav {
 }
 
 .nav-link.active {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   font-weight: 500;
+  color: $color !important;
 }
 
 .nav-link {
-  text-align: center;
-  color: rgba(0, 0, 0, 0.5);
+  color: #fff !important;
+}
+
+#myTab .nav-link {
+  color: $color !important;
 }
 
 //Question

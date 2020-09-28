@@ -16,7 +16,9 @@ const SelectList = (props) => {
   return (
     <>
       <button
-        className={`selectBtn pl-3 pr-3 ${showList ? "arrowUp" : "arrowDown"}`}
+        className={`selectBtn pl-3 pr-3 text-myGrey ${
+          showList ? "arrowUp" : "arrowDown"
+        }`}
         onClick={() => setShowList(!showList)}
       >
         {selectTitle}
@@ -28,7 +30,7 @@ const SelectList = (props) => {
         {users.map((user, index) => (
           <Link
             key={index}
-            className="list-group-item"
+            className="list-group-item text-myGrey"
             onClick={() => {
               setSelectTitle(user.name);
               setShowList(!showList);
@@ -41,7 +43,7 @@ const SelectList = (props) => {
               alt="User avatar"
               width="32"
               height="32"
-              className="mr-3"
+              className="mr-3 p-1 bg-blue"
             />
             {user.name}
           </Link>

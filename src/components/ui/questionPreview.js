@@ -13,7 +13,13 @@ class QuestionPreview extends React.Component {
         <div className="d-flex justify-content-between">
           <li className="p-2 text-truncate">{question.optionOne.text}..</li>
 
-          <Link className="p-2 pollLink" to={`questions/${question.id}`}>
+          <Link
+            className="p-2 pollLink"
+            to={{
+              pathname: `questions/${question.id}`,
+              state: { questionType: this.props.questionType },
+            }}
+          >
             View Poll
           </Link>
         </div>
