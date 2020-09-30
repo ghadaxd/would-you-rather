@@ -1,5 +1,5 @@
 import { _getQuestions } from "../utils/_DATA";
-import { receiveQuestions } from "./receiveQuestions";
+import { receiveQuestions } from "./questions";
 
 export function getQuestions() {
   return (dispatch) => {

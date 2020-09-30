@@ -1,10 +1,15 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 import CurrentUser from "../ui/currentUser";
 import LogoutBtn from "./logoutBtn";
+import NavItem from "./navItem";
 
 const Navbar = () => {
+  const NavItems = [
+    { path: "/homepage", title: "Home" },
+    { path: "/add", title: "Add Question" },
+    { path: "/leaderboard", title: "Leader Board" },
+  ];
   return (
     <nav className="navbar navbar-expand-lg navbar-light pl-5">
       <button
@@ -23,37 +28,11 @@ const Navbar = () => {
         id="navbarNav"
       >
         <ul className="navbar-nav col-10">
-          <li className="nav-item">
-            <NavLink
-              exact
-              to="/homepage"
-              className="nav-link"
-              activeClassName="active"
-            >
-              Home
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to="/add"
-              className="nav-link"
-              activeClassName="active"
-            >
-              Add Question
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to="/leaderboard"
-              className="nav-link"
-              activeClassName="active"
-            >
-              Leader Board
-            </NavLink>
-          </li>
+          {NavItems.map((navitem, index) => (
+            <NavItem key={index} path={navitem.path} title={navitem.title} />
+          ))}
         </ul>
+
         <CurrentUser />
         <LogoutBtn />
       </div>

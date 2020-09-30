@@ -1,5 +1,4 @@
-import { RECEIVE_USERS } from "../actions/receiveUsers";
-import { UPDATE_USERS } from "../actions/updateUsers";
+import { RECEIVE_USERS, UPDATE_USERS } from "../actions/users";
 
 export default function users(state = [], action) {
   switch (action.type) {

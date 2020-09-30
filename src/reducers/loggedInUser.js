@@ -1,6 +1,8 @@
-import { SET_LOGGED_IN_USER } from "../actions/setLoggedInUser";
-import { UPDATE_USER_ANSWERS } from "../actions/updateUserAnswers";
-import { UPDATE_USER_QUESTIONS } from "../actions/updateUserQuestions";
+import {
+  SET_LOGGED_IN_USER,
+  UPDATE_USER_ANSWERS,
+  UPDATE_USER_QUESTIONS,
+} from "../actions/users";
 
 export default function loggedInUser(state = null, action) {
   switch (action.type) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { useDispatch } from "react-redux";
-import { setLoggedInUser } from "../../actions/setLoggedInUser";
+import { setLoggedInUser } from "../../actions/users";
 import { Link } from "react-router-dom";
 
 const SelectList = (props) => {

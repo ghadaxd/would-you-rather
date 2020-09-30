@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { logout } from "../../actions/logout";
+import { logout } from "../../actions/users";
 
 const LogoutBtn = () => {
   const dispatch = useDispatch();

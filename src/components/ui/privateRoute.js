@@ -11,9 +11,7 @@ import PageNotFound from "../pages/pageNotFound";
 const PrivateRoute = ({ ...rest }) => {
   const { path, user } = rest;
 
-  //Logged in user should come from the saved state,
-  // TO BE REMOVED
-  const loggedInUser = user || sessionStorage.getItem("loggedInUserId");
+  const loggedInUser = user;
 
   const route =
     loggedInUser !== null ? (

@@ -99,7 +99,14 @@ nav {
   color: $color !important;
 }
 
-//Question
+// - Question
+
+#myTabContent {
+  $border: 1px solid #dee2e6;
+  border-right: $border;
+  border-left: $border;
+  border-bottom: $border;
+}
 
 .questionContainer {
   color: rgba(0, 0, 0, 0.5);
@@ -122,14 +129,14 @@ nav {
   border-top-left-radius: $border-radius;
 }
 
-//Question View
+// - Question View
 
 .voteBtn {
   color: $background-color;
   outline: $background-color auto 1px;
 }
 
-//Leaderboard
+// Leaderboard
 
 .numsContainer {
   width: 45%;

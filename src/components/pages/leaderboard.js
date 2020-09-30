@@ -4,26 +4,24 @@ import { connect } from "react-redux";
 import Navbar from "../ui/navbar";
 import UserInfoRecord from "../ui/userInfoRecord";
 
-class Leaderboard extends React.Component {
-  render() {
-    return (
-      <div className="fluid-container">
-        <Navbar />
-        <div className="container questionContainer mt-5 p-5">
-          <div className="row bg-blue text-white d-flex justify-content-center">
-            <h2>#WhoIsTheBest ...</h2>
-          </div>
+const Leaderboard = (props) => {
+  return (
+    <div className="fluid-container">
+      <Navbar />
+      <div className="container questionContainer mt-5 p-5">
+        <div className="row bg-blue text-white d-flex justify-content-center">
+          <h2>#WhoIsTheBest ...</h2>
+        </div>
 
-          <div className="row d-flex justify-content-center no-gutters">
-            {this.props.users.map((user, index) => (
-              <UserInfoRecord key={index} rank={index + 1} user={user} />
-            ))}
-          </div>
+        <div className="row d-flex justify-content-center no-gutters">
+          {props.users.map((user, index) => (
+            <UserInfoRecord key={index} rank={index + 1} user={user} />
+          ))}
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 const sortUsers = (users) => {
   return users.sort(compare);

@@ -1,5 +1,5 @@
 import { _getUsers } from "../utils/_DATA";
-import { receiveUsers } from "./receiveUsers";
+import { receiveUsers } from "./users";
 
 export function initUsers() {
   return (dispatch) => {

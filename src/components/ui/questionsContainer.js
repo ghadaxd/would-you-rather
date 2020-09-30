@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { getQuestions } from "../../actions/getQuestions";
-import { logout } from "../../actions/logout";
+import { logout } from "../../actions/users";
 
 import QuestionsContent from "./questionsContent";
 import QuestionsTabs from "./questionsTabs";

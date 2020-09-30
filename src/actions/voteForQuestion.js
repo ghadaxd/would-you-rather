@@ -1,7 +1,6 @@
 import { _saveQuestionAnswer } from "../utils/_DATA";
-import { updateQuestions } from "./updateQuestions";
-import { updateUsers } from "./updateUsers";
-import { updateUserAnswers } from "./updateUserAnswers";
+import { updateQuestions } from "./questions";
+import { updateUsers, updateUserAnswers } from "./users";
 
 export function voteForQuestion(vote) {
   return (dispatch) => {
