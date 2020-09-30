@@ -44,7 +44,12 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink exact to="/" className="nav-link" activeClassName="active">
+            <NavLink
+              exact
+              to="/leaderboard"
+              className="nav-link"
+              activeClassName="active"
+            >
               Leader Board
             </NavLink>
           </li>

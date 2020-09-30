@@ -37,7 +37,9 @@ class QuestionsContent extends React.Component {
               />
             ))
           ) : (
-            <span className="text-myGrey">No questions to display = )</span>
+            <span className="text-myGrey p-2 m-3">
+              No questions to display = )
+            </span>
           )}
         </div>
       </div>

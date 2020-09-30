@@ -128,3 +128,19 @@ nav {
   color: $background-color;
   outline: $background-color auto 1px;
 }
+
+//Leaderboard
+
+.numsContainer {
+  width: 45%;
+  height: 100%;
+  position: relative;
+  left: 26%;
+}
+
+.separator {
+  border-left: 1px dotted rgba(0, 0, 0, 0.5);
+  height: 4.5em;
+  position: absolute;
+  left: 75%;
+}

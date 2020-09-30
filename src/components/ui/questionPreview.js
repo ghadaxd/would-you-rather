@@ -14,7 +14,7 @@ class QuestionPreview extends React.Component {
           <li className="p-2 text-truncate">{question.optionOne.text}..</li>
 
           <Link
-            className="p-2 pollLink"
+            className="pt-2 pollLink"
             to={{
               pathname: `questions/${question.id}`,
               state: { questionType: this.props.questionType },
