@@ -6,9 +6,9 @@ import NavItem from "./navItem";
 
 const Navbar = () => {
   const NavItems = [
-    { path: "/homepage", title: "Home" },
-    { path: "/add", title: "Add Question" },
-    { path: "/leaderboard", title: "Leader Board" },
+    { id: 0, path: "/homepage", title: "Home" },
+    { id: 1, path: "/add", title: "Add Question" },
+    { id: 2, path: "/leaderboard", title: "Leader Board" },
   ];
   return (
     <nav className="navbar navbar-expand-lg navbar-light pl-5">
@@ -28,8 +28,12 @@ const Navbar = () => {
         id="navbarNav"
       >
         <ul className="navbar-nav col-10">
-          {NavItems.map((navitem, index) => (
-            <NavItem key={index} path={navitem.path} title={navitem.title} />
+          {NavItems.map((navitem) => (
+            <NavItem
+              key={navitem.id}
+              path={navitem.path}
+              title={navitem.title}
+            />
           ))}
         </ul>
 

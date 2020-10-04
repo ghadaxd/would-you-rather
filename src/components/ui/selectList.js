@@ -26,9 +26,9 @@ const SelectList = ({ users, path }) => {
         className="selectListContainer list-group"
         style={styleProps}
       >
-        {users.map((user, index) => (
+        {users.map((user) => (
           <Link
-            key={index}
+            key={user.id}
             className="list-group-item text-myGrey"
             onClick={() => {
               setSelectTitle(user.name);

@@ -28,10 +28,10 @@ class QuestionsContent extends React.Component {
       >
         <div className="d-flex flex-wrap justify-content-center">
           {this.state.questions.length !== 0 ? (
-            this.state.questions.map((question, index) => (
+            this.state.questions.map((question) => (
               <QuestionPreview
                 viewFrom="questionsContent"
-                key={index}
+                key={question.id}
                 question={question}
                 questionType={this.props.type}
               />

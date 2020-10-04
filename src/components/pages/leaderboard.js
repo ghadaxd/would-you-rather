@@ -15,7 +15,7 @@ const Leaderboard = (props) => {
 
         <div className="row d-flex justify-content-center no-gutters">
           {props.users.map((user, index) => (
-            <UserInfoRecord key={index} rank={index + 1} user={user} />
+            <UserInfoRecord key={user.id} rank={index + 1} user={user} />
           ))}
         </div>
       </div>
