@@ -31,13 +31,7 @@ const compare = (a, b) => {
   const userAtotal = a.questions.length + Object.keys(a.answers).length;
   const userBtotal = b.questions.length + Object.keys(b.answers).length;
 
-  let comparison = 0;
-  if (userAtotal < userBtotal) {
-    comparison = 1;
-  } else if (userAtotal > userBtotal) {
-    comparison = -1;
-  }
-  return comparison;
+  return userBtotal - userAtotal;
 };
 
 function mapStateToProps({ users }) {

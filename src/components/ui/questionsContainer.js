@@ -116,11 +116,9 @@ function mapStateToProps({ loggedInUser, questions }) {
   };
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getQuestions: () => dispatch(getQuestions()),
-    logout: () => dispatch(logout()),
-  };
+const mapDispatchToProps = {
+  getQuestions,
+  logout,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionsContainer);
