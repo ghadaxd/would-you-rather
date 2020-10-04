@@ -1,4 +1,8 @@
-import { RECEIVE_USERS, UPDATE_USERS } from "../actions/users";
+import {
+  RECEIVE_USERS,
+  UPDATE_USERS,
+  UPDATE_USERS_QUESTIONS,
+} from "../actions/users";
 
 export default function users(state = [], action) {
   switch (action.type) {
@@ -19,6 +23,18 @@ export default function users(state = [], action) {
         return user;
       });
       return updated_users;
+    case UPDATE_USERS_QUESTIONS:
+      const { newqid, userid } = action;
+      const updated_users_questions = state.map((user) => {
+        if (user.id === userid) {
+          return {
+            ...user,
+            questions: [...user.questions, newqid],
+          };
+        }
+        return user;
+      });
+      return updated_users_questions;
     default:
       return state;
   }

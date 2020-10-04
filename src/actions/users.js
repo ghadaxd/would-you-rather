@@ -34,6 +34,16 @@ export function updateUserQuestions(qid) {
   };
 }
 
+export const UPDATE_USERS_QUESTIONS = "UPDATE_USERS_QUESTIONS";
+
+export function updateUsersQuestions(newqid, userid) {
+  return {
+    type: UPDATE_USERS_QUESTIONS,
+    newqid,
+    userid,
+  };
+}
+
 export const UPDATE_USERS = "UPDATE_USERS";
 
 export function updateUsers(vote) {

@@ -1,7 +1,7 @@
 import { _saveQuestion } from "../utils/_DATA";
 
 import { addQuestion } from "./questions";
-import { updateUserQuestions } from "./users";
+import { updateUserQuestions, updateUsersQuestions } from "./users";
 
 export function addNewPoll(question) {
   return (dispatch) => {
@@ -10,6 +10,7 @@ export function addNewPoll(question) {
       if (newAddedPoll) {
         dispatch(addQuestion(newAddedPoll));
         dispatch(updateUserQuestions(newAddedPoll.id));
+        dispatch(updateUsersQuestions(newAddedPoll.id, newAddedPoll.author));
       }
     });
   };
