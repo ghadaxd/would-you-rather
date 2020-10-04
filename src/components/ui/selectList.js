@@ -4,13 +4,12 @@ import { useDispatch } from "react-redux";
 import { setLoggedInUser } from "../../actions/users";
 import { Link } from "react-router-dom";
 
-const SelectList = (props) => {
+const SelectList = ({ users, path }) => {
   const [selectTitle, setSelectTitle] = useState("Select a user to continue");
   const [showList, setShowList] = useState(false);
   const visibleStyle = { height: "auto", opacity: 1, overflow: "visible" };
   const hiddenStyle = { opacity: 0, height: 0, overflow: "hidden" };
   const styleProps = useSpring(showList ? visibleStyle : hiddenStyle);
-  const { users } = props;
   const dispatch = useDispatch();
 
   return (
@@ -36,7 +35,7 @@ const SelectList = (props) => {
               setShowList(!showList);
               dispatch(setLoggedInUser(user));
             }}
-            to="/homepage"
+            to={path === "/" ? "/homepage" : path}
           >
             <img
               src={user.avatarURL}

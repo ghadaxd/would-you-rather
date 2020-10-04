@@ -14,7 +14,10 @@ class Login extends React.Component {
     return (
       <div className="login d-flex justify-content-center align-items-center flex-column">
         <AppName />
-        <SelectList users={this.props.users} />
+        <SelectList
+          users={this.props.users}
+          path={this.props.location.pathname}
+        />
       </div>
     );
   }
