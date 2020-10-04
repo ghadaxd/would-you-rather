@@ -23,3 +23,10 @@ Used data provided in the starter code.
 1. react-router.
 1. bootstrap.
 1. bootstrap icons `(as assets not library, but it's from bootstrap).`
+
+## Getting Started
+
+To get started:
+
+1. Install all project dependencies with npm install.
+1. Start the development server with npm start.
