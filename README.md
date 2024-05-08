@@ -1,9 +1,9 @@
 # Would You Rather Project
+<img width="1171" alt="w-y-r" src="https://github.com/ghadaxd/would-you-rather/assets/68280380/b2402210-c014-4b80-88d0-cd66163776a6">
 
 A web app that lets a user play the “Would You Rather?” game. The game goes like this: A user is asked a question in the form: “Would you rather [option A] or [option B] ?”. Answering "neither" or "both" is against the rules
 
 ## Data
-
 Used data provided in the starter code.
 
 ## Features
@@ -30,3 +30,6 @@ To get started:
 
 1. Install all project dependencies with npm install.
 1. Start the development server with npm start.
+
+## Live link!
+[Click here..](https://boundless-grave-boursin.glitch.me/)
